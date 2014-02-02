@@ -1,0 +1,38 @@
+{
+  "name": "clouddb",
+  "description": "Cloud database.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "config": "~0.4.35",
+    "knox": "~0.8.8",
+    "lodash": "~2.4.1",
+    "yaml": "~0.2.3",
+    "simpledb": "~0.1.0"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "devDependencies": {
+    "jshint": "~2.0.1",
+    "should": "~1.2.2"
+  },
+  "scripts": {
+    "test": "export NODE_ENV=_default; mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/markbirbeck/clouddb"
+  },
+  "keywords": [
+    "aws",
+    "clouddb",
+    "s3",
+    "simpledb"
+  ],
+  "bugs": {
+    "url": "https://github.com/markbirbeck/clouddb/issues"
+  },
+  "homepage": "https://github.com/markbirbeck/clouddb"
+}
