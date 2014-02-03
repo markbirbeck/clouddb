@@ -49,7 +49,7 @@ describe('clouddb: ', function(){
       should.not.exist(err);
       id.should.equal('/test/06477691');
       doc.should.eql(fixture);
-      meta.should.eql({s3Path: id + '.json'});
+      meta.should.eql({s3Path: id});
       done();
     });
   });

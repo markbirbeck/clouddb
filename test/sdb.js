@@ -23,7 +23,7 @@ describe('Meta store:', function(){
       should.not.exist(err);
       _id.should.equal(id);
       var meta = _.clone(fixture);
-      meta.s3Path = id + ".json";
+      meta.s3Path = id;
       attr.should.eql(meta);
       done();
     });
