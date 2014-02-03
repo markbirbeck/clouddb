@@ -42,6 +42,7 @@ var fixture = [
   , 'product_hash': '5b0e4b4e040652991c7df1ee'
   , 'name': 'Jelly Pong Pong Mascara Lash Extension & Shadow Taffy SAVE £17.00'
   }
+  , '<p>Hello, world!</p>'
 ];
 
 describe('doc store:', function(){
@@ -123,6 +124,36 @@ describe('doc store:', function(){
         should.not.exist(err);
         url.should.equal(path);
         doc.should.eql(fixture[2]);
+        done();
+      });
+    });
+
+    it('delete by id', function(done){
+      docStore.del(id, function(err, url){
+        should.not.exist(err);
+        url.should.equal(path);
+        done();
+      });
+    });
+  });
+
+  describe('HTML:', function(){
+    var id = '/test/06477691.html'
+      , path = 'https://' + bucket + '.s3.amazonaws.com' + id;
+
+    it('put by id', function(done){
+      docStore.put(id, fixture[3], 'text/html', function(err, url){
+        should.not.exist(err);
+        url.should.equal(path);
+        done();
+      });
+    });
+
+    it('get by id', function(done){
+      docStore.get(id, function(err, url, doc){
+        should.not.exist(err);
+        url.should.equal(path);
+        doc.should.eql(fixture[3]);
         done();
       });
     });
